@@ -7,7 +7,7 @@
                 <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
                     <el-menu-item index="1">
                             <i class="el-icon-time"></i>
-                            <span slot="title">最新活动</span>
+                            <span slot="title" @click="handleClick('最新')">最新活动</span>
                     </el-menu-item>
                     <el-submenu index="2">
                         <template slot="title">
@@ -16,17 +16,17 @@
                         </template>
                         <el-menu-item-group>
                             <template slot="title">国内</template>
-                            <el-menu-item index="2-1">北京</el-menu-item>
-                            <el-menu-item index="2-2">上海</el-menu-item>
-                            <el-menu-item index="2-3">杭州</el-menu-item>
-                            <el-menu-item index="2-4">深圳</el-menu-item>
-                            <el-menu-item index="2-5">成都</el-menu-item>
+                            <el-menu-item index="2-1" @click="handleClick('北京')">北京</el-menu-item>
+                            <el-menu-item index="2-2" @click="handleClick('上海')" >上海</el-menu-item>
+                            <el-menu-item index="2-3" @click="handleClick('杭州')">杭州</el-menu-item>
+                            <el-menu-item index="2-4" @click="handleClick('深圳')">深圳</el-menu-item>
+                            <el-menu-item index="2-5" @click="handleClick('成都')">成都</el-menu-item>
                         </el-menu-item-group>
                         <el-menu-item-group>
                             <template slot="title">海外</template>
-                            <el-menu-item index="2-20">Taibei</el-menu-item>
-                            <el-menu-item index="2-21">Los Angeles</el-menu-item>
-                            <el-menu-item index="2-22">San Francisco</el-menu-item>
+                            <el-menu-item index="2-20" @click="handleClick('Taibei')">Taibei</el-menu-item>
+                            <el-menu-item index="2-21" @click="handleClick('Los Angeles')">Los Angeles</el-menu-item>
+                            <el-menu-item index="2-22" @click="handleClick('San Francisco')">San Francisco</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
                     <el-submenu index="3">
@@ -35,9 +35,9 @@
                         <span>活动日期</span>
                         </template>
                         <el-menu-item-group>
-                            <el-menu-item index="3-1">七月</el-menu-item>
-                            <el-menu-item index="3-2">八月</el-menu-item>
-                            <el-menu-item index="3-3">九月</el-menu-item>
+                            <el-menu-item index="3-1" @click="handleClick('七月')">七月</el-menu-item>
+                            <el-menu-item index="3-2" @click="handleClick('八月')">八月</el-menu-item>
+                            <el-menu-item index="3-3" @click="handleClick('九月')">九月</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
                     <el-submenu index="4">
@@ -46,10 +46,10 @@
                         <span>参会嘉宾</span>
                         </template>
                         <el-menu-item-group>
-                            <el-menu-item index="4-1">Daniel</el-menu-item>
-                            <el-menu-item index="4-2">Jan</el-menu-item>
-                            <el-menu-item index="4-3">Kevin</el-menu-item>
-                            <el-menu-item index="4-3">Terry</el-menu-item>
+                            <el-menu-item index="4-1" @click="handleClick('Daniel')">Daniel</el-menu-item>
+                            <el-menu-item index="4-2" @click="handleClick('Jan')">Jan</el-menu-item>
+                            <el-menu-item index="4-3" @click="handleClick('Kevin')">Kevin</el-menu-item>
+                            <el-menu-item index="4-3" @click="handleClick('Terry')">Terry</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
                     <el-submenu index="5">
@@ -78,7 +78,7 @@
             <el-col :span="16" :offset="2">
                 <h1>活动详情</h1>
                 <br>
-                <div>
+                <div class="filter-tag">
                     <el-tag
                         :key="tag"
                         v-for="tag in dynamicTags"
@@ -90,59 +90,27 @@
                 </div>
                 <br>
 
-                <div id="190630">
-                    <el-card class="box-card">
-                    <div slot="header" class="clearfix">
-                    <span><h2>2019.6.30 &emsp; Shanghai &emsp; Chainge 区块链技术沙龙</h2></span>
-                    <el-tag size="mini">上海</el-tag>
-                    <el-tag size="mini" type="success">六月</el-tag>
-                    <el-tag size="mini" type="danger">Daniel</el-tag>
-                    <el-tag size="mini" type="warning">沙龙</el-tag>
+                <el-card class="box-card" v-for="(item, index) in showList" :key="index">
+                  <div slot="header" class="clearfix">
+                    <span><h2>{{item.date}} &emsp; Shanghai &emsp; Chainge 区块链技术沙龙</h2></span>
+                    <el-tag size="mini" :type="randType()" class="ct-tag"  v-for="(tag, index) in item.tags" :key="index">{{tag}}</el-tag>
                     </div>
-                    <div>
-                        <el-row class="tac">
-                            <el-col :span="4">
-                                <br>
-                                <div class="daniel"></div>
-                            </el-col>
-                            <el-col :span="18">
-                            <p><b>活动时间</b>：2019.6.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]</p>
-                            <p><b>活动地点</b>：上海市虹口区余杭路18号（原境界美术馆）&emsp;<a href="https://j.map.baidu.com/7kOs-" target="_blank">百度地图</a>&emsp;
-                            <a href="http://surl.amap.com/1PKz4_0137FPb" target="_blanl">高德地图</a></p>
-                            <p><b>主办方</b>：链节点、Chainge</p>
-                            <a href="https://m.chainnode.com/event/342860" target="_blank"><el-button type="primary" plain>报名参加</el-button></a>
-                            </el-col>
-                        </el-row>
-                    </div>
-                    </el-card>
-                </div>
-                <br>
-                <div id="190630">
-                    <el-card class="box-card">
-                    <div slot="header" class="clearfix">
-                    <span><h2>2019.6.30 &emsp; Shanghai &emsp; Chainge 区块链技术沙龙</h2></span>
-                    <el-tag size="mini">上海</el-tag>
-                    <el-tag size="mini" type="success">六月</el-tag>
-                    <el-tag size="mini" type="danger">Daniel</el-tag>
-                    <el-tag size="mini" type="warning">沙龙</el-tag>
-                    </div>
-                    <div>
-                        <el-row class="tac">
-                            <el-col :span="4">
-                                <br>
-                                <div class="daniel"></div>
-                            </el-col>
-                            <el-col :span="18">
-                            <p><b>活动时间</b>：2019.6.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]</p>
-                            <p><b>活动地点</b>：上海市虹口区余杭路18号（原境界美术馆）&emsp;<a href="https://j.map.baidu.com/7kOs-" target="_blank">百度地图</a>&emsp;
-                            <a href="http://surl.amap.com/1PKz4_0137FPb" target="_blanl">高德地图</a></p>
-                            <p><b>主办方</b>：链节点、Chainge</p>
-                            <a href="https://m.chainnode.com/event/342860" target="_blank"><el-button type="primary" plain>报名参加</el-button></a>
-                            </el-col>
-                        </el-row>
-                    </div>
-                    </el-card>
-                </div>
+                  <div>
+                    <el-row class="tac">
+                        <el-col :span="4">
+                            <br>
+                            <div class="daniel"></div>
+                        </el-col>
+                        <el-col :span="18">
+                          <p><b>活动时间</b>：<span v-html="item.time"></span></p>
+                          <p><b>活动地点</b>：{{item.address}}&emsp;<a :href="item.bmap_link" target="_blank">百度地图</a>&emsp;
+                        <a :href="item.amap_link" target="_blanl">高德地图</a></p>
+                          <p><b>主办方</b>：{{item.sponsor}}</p>
+                        <a :href="item.join_link" target="_blank"><el-button type="primary" plain>报名参加</el-button></a>
+                        </el-col>
+                    </el-row>
+                  </div>
+                </el-card>
             </el-col>
             </div>
             </el-row>
@@ -152,22 +120,137 @@
 <script>
 
 export default {
-    methods: {
-        handleOpen(key, keyPath) {
-            console.log(key, keyPath);
-        },
-        handleClose(key, keyPath) {
-            console.log(key, keyPath);
-        }
-    },
     data() {
         return {
-             dynamicTags: ['最新' , '北京' , '八月' , 'Daniel' , 'Meetup'],
-        inputVisible: false,
-        inputValue: ''
+          dynamicTags: ['最新'],
+          inputVisible: false,
+          inputValue: '',
+          list: [
+            {
+              tags: ["最新", "上海"],
+              date: "2019.06.30",
+              time: "2019.6.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
+              address: "上海市虹口区余杭路18号（原境界美术馆）",
+              bmap_link: "https://j.map.baidu.com/7kOs-",
+              amap_link: "http://surl.amap.com/1PKz4_0137FPb",
+              join_link: "https://m.chainnode.com/event/342860",
+              sponsor: "链节点、Chainge"
+            },
+            {
+              tags: ["最新", "九月"],
+              date: "2019.7.30",
+              time: "2019.7.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
+              address: "上海市虹口区余杭路18号（原境界美术馆）",
+              bmap_link: "https://j.map.baidu.com/7kOs-",
+              amap_link: "http://surl.amap.com/1PKz4_0137FPb",
+              join_link: "https://m.chainnode.com/event/342860",
+              sponsor: "链节点、Chainge"
+            },
+            {
+              tags: ["最新", "杭州"],
+              date: "2019.8.30",
+              time: "2019.8.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
+              address: "上海市虹口区余杭路18号（原境界美术馆）",
+              bmap_link: "https://j.map.baidu.com/7kOs-",
+              amap_link: "http://surl.amap.com/1PKz4_0137FPb",
+              join_link: "https://m.chainnode.com/event/342860",
+              sponsor: "链节点、Chainge"
+            },
+            {
+              tags: ["最新", "八月"],
+              date: "2019.9.30",
+              time: "2019.9.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
+              address: "上海市虹口区余杭路18号（原境界美术馆）",
+              bmap_link: "https://j.map.baidu.com/7kOs-",
+              amap_link: "http://surl.amap.com/1PKz4_0137FPb",
+              join_link: "https://m.chainnode.com/event/342860",
+              sponsor: "链节点、Chainge"
+            },
+            {
+              tags: ["最新", "七月"],
+              date: "2019.1.30",
+              time: "2019.1.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
+              address: "上海市虹口区余杭路18号（原境界美术馆）",
+              bmap_link: "https://j.map.baidu.com/7kOs-",
+              amap_link: "http://surl.amap.com/1PKz4_0137FPb",
+              join_link: "https://m.chainnode.com/event/342860",
+              sponsor: "链节点、Chainge"
+            },
+            {
+              tags: ["北京", "九月"],
+              date: "2019.3.30",
+              time: "2019.3.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
+              address: "上海市虹口区余杭路18号（原境界美术馆）",
+              bmap_link: "https://j.map.baidu.com/7kOs-",
+              amap_link: "http://surl.amap.com/1PKz4_0137FPb",
+              join_link: "https://m.chainnode.com/event/342860",
+              sponsor: "链节点、Chainge"
+            },
+            {
+              tags: ["Terry", "上海"],
+              date: "2019.4.30",
+              time: "2019.4.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
+              address: "上海市虹口区余杭路18号（原境界美术馆）",
+              bmap_link: "https://j.map.baidu.com/7kOs-",
+              amap_link: "http://surl.amap.com/1PKz4_0137FPb",
+              join_link: "https://m.chainnode.com/event/342860",
+              sponsor: "链节点、Chainge"
+            },
+            {
+              tags: ["Jan", "九月"],
+              date: "2019.9.30",
+              time: "2019.9.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
+              address: "上海市虹口区余杭路18号（原境界美术馆）",
+              bmap_link: "https://j.map.baidu.com/7kOs-",
+              amap_link: "http://surl.amap.com/1PKz4_0137FPb",
+              join_link: "https://m.chainnode.com/event/342860",
+              sponsor: "链节点、Chainge"
+            },
+          ],
+          showList: []
       };
     },
+    watch: {
+      dynamicTags(newTags) {
+        console.log(newTags)
+        this.showList = this.list.filter((item) => {
+          for(let i = 0; i < newTags.length; i++) {
+            let tag = newTags[i]
+            if(item.tags.indexOf(tag) > -1)
+              return true
+          }
+          return false
+        })
+        this.showList = this.showList.sort((a, b) => new Date(b.date) -new Date(a.date))
+      }
+    },
+    mounted() {
+      this.showList = this.list.filter((item) => {
+        for(let i = 0; i < this.dynamicTags.length; i++) {
+          let tag = this.dynamicTags[i]
+          if(item.tags.indexOf(tag) > -1)
+            return true
+        }
+        return false
+      })
+      this.showList = this.showList.sort((a, b) => new Date(b.date) -new Date(a.date))
+      console.log(this.showList)
+    },
     methods: {
+      randType() {
+        var tps = ["success", "danger", "warning"]
+        return tps[Math.floor(Math.random() * tps.length)]
+      },
+      handleClick(tag) {
+        if (this.dynamicTags.indexOf(tag) == -1)
+          this.dynamicTags.push(tag)
+      },
+      handleOpen(key, keyPath) {
+          console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+          console.log(key, keyPath);
+      },
       handleCloseTag(tag) {
         this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
       },
@@ -290,5 +373,17 @@ export default {
     display: inline-block;
 }
 
+.filter-tag .el-tag {
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
 
+.ct-tag {
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.box-card {
+  margin-bottom: 15px;
+}
 </style>
