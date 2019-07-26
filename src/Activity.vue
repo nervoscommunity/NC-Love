@@ -99,7 +99,7 @@
                     <el-row class="tac">
                         <el-col :span="4">
                             <br>
-                            <div class="daniel"></div>
+                            <div :class="item.guest"></div>
                         </el-col>
                         <el-col :span="18">
                           <p><b>活动时间</b>：<span v-html="item.time"></span></p>
@@ -127,8 +127,9 @@ export default {
           inputValue: '',
           list: [
             {
-              tags: ["最新", "上海"],
+              tags: ["最新", "上海","6月","Daniel","沙龙"],
               date: "2019.06.30",
+              guest: "daniel",
               time: "2019.6.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
               address: "上海市虹口区余杭路18号（原境界美术馆）",
               bmap_link: "https://j.map.baidu.com/7kOs-",
@@ -137,8 +138,9 @@ export default {
               sponsor: "链节点、Chainge"
             },
             {
-              tags: ["最新", "九月"],
+              tags: ["最新", "北京","7月","Terry","路演"],
               date: "2019.7.30",
+              guest: "terry",
               time: "2019.7.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
               address: "上海市虹口区余杭路18号（原境界美术馆）",
               bmap_link: "https://j.map.baidu.com/7kOs-",
@@ -147,8 +149,9 @@ export default {
               sponsor: "链节点、Chainge"
             },
             {
-              tags: ["最新", "杭州"],
+              tags: ["最新", "杭州","8月","Jan","CW"],
               date: "2019.8.30",
+              guest: "jan",
               time: "2019.8.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
               address: "上海市虹口区余杭路18号（原境界美术馆）",
               bmap_link: "https://j.map.baidu.com/7kOs-",
@@ -157,8 +160,9 @@ export default {
               sponsor: "链节点、Chainge"
             },
             {
-              tags: ["最新", "八月"],
+              tags: ["最新", "深圳","9月","Nervos","会议"],
               date: "2019.9.30",
+              guest: "nervos",
               time: "2019.9.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
               address: "上海市虹口区余杭路18号（原境界美术馆）",
               bmap_link: "https://j.map.baidu.com/7kOs-",
@@ -167,8 +171,9 @@ export default {
               sponsor: "链节点、Chainge"
             },
             {
-              tags: ["最新", "七月"],
+              tags: ["最新","1月","Jan","线上直播"],
               date: "2019.1.30",
+              guest: "jan",
               time: "2019.1.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
               address: "上海市虹口区余杭路18号（原境界美术馆）",
               bmap_link: "https://j.map.baidu.com/7kOs-",
@@ -177,8 +182,9 @@ export default {
               sponsor: "链节点、Chainge"
             },
             {
-              tags: ["北京", "九月"],
+              tags: ["最新","3月","Terry","线上会议"],
               date: "2019.3.30",
+              guest: "terry",
               time: "2019.3.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
               address: "上海市虹口区余杭路18号（原境界美术馆）",
               bmap_link: "https://j.map.baidu.com/7kOs-",
@@ -187,19 +193,10 @@ export default {
               sponsor: "链节点、Chainge"
             },
             {
-              tags: ["Terry", "上海"],
+              tags: ["最新","1月","Daniel","线上分享"],
               date: "2019.4.30",
+              guest: "daniel",
               time: "2019.4.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
-              address: "上海市虹口区余杭路18号（原境界美术馆）",
-              bmap_link: "https://j.map.baidu.com/7kOs-",
-              amap_link: "http://surl.amap.com/1PKz4_0137FPb",
-              join_link: "https://m.chainnode.com/event/342860",
-              sponsor: "链节点、Chainge"
-            },
-            {
-              tags: ["Jan", "九月"],
-              date: "2019.9.30",
-              time: "2019.9.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
               address: "上海市虹口区余杭路18号（原境界美术馆）",
               bmap_link: "https://j.map.baidu.com/7kOs-",
               amap_link: "http://surl.amap.com/1PKz4_0137FPb",
@@ -238,7 +235,7 @@ export default {
     },
     methods: {
       randType() {
-        var tps = ["success", "danger", "warning"]
+        var tps = ["primary","success", "danger", "warning","info"]
         return tps[Math.floor(Math.random() * tps.length)]
       },
       handleClick(tag) {
@@ -254,14 +251,12 @@ export default {
       handleCloseTag(tag) {
         this.dynamicTags.splice(this.dynamicTags.indexOf(tag), 1);
       },
-
       showInput() {
         this.inputVisible = true;
         this.$nextTick(_ => {
           this.$refs.saveTagInput.$refs.input.focus();
         });
       },
-
       handleInputConfirm() {
         let inputValue = this.inputValue;
         if (inputValue) {
