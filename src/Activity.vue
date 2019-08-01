@@ -217,7 +217,7 @@ export default {
           }
           return false
         })
-        this.showList = this.showList.sort((a, b) => new Date(b.date) -new Date(a.date))
+        this.showList = this.showList.sort((a, b) => new Date(a.date) - new Date(b.date))
       }
     },
     // 打开页面自动激活的方法
@@ -230,7 +230,7 @@ export default {
         }
         return false
       })
-      this.showList = this.showList.sort((a, b) => new Date(b.date) -new Date(a.date))
+      this.showList = this.showList.sort((a, b) => new Date(a.date) -new Date(b.date))
       console.log(this.showList)
     },
     //自定义的方法，点击时候调用
