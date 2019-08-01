@@ -97,7 +97,7 @@
                 <el-card class="box-card" v-for="(item, index) in showList" :key="index">
                   <div slot="header" class="clearfix">
                     <span><h2>{{item.date}} &emsp; Shanghai &emsp; Chainge 区块链技术沙龙</h2></span>
-                    <el-tag size="mini" :type="randType()" class="ct-tag"  v-for="(tag, index) in item.tags" :key="index">{{tag}}</el-tag>
+                    <el-tag size="mini" :type="randType(index)" class="ct-tag"  v-for="(tag, index) in item.tags" :key="index">{{tag}}</el-tag>
                     </div>
                   <div>
                     <el-row class="tac">
@@ -242,9 +242,10 @@ export default {
     },
     //自定义的方法，点击时候调用
     methods: {
-      randType() {
+      randType(index) {
         var tps = ["primary","success", "danger", "warning","info"]
-        return tps[Math.floor(Math.random() * tps.length)]
+        // return tps[Math.floor(Math.random() * tps.length)]
+        return tps[index]
       },
       handleClick(tag) {
         if (this.dynamicTags.indexOf(tag) == -1)
