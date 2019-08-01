@@ -20,17 +20,20 @@
                         </template>
                         <el-menu-item-group>
                             <template slot="title">国内</template>
-                            <el-menu-item index="2-1" @click="handleClick('北京')">北京</el-menu-item>
+                            <!--<el-menu-item index="2-1" @click="handleClick('北京')">北京</el-menu-item>
                             <el-menu-item index="2-2" @click="handleClick('上海')">上海</el-menu-item>
-                            <el-menu-item index="2-3" @click="handleClick('杭州')">杭州</el-menu-item>
+                            <el-menu-item index="2-3" @click="handleClick('杭州')">杭州</el-menu-item>-->
                             <el-menu-item index="2-4" @click="handleClick('深圳')">深圳</el-menu-item>
                             <el-menu-item index="2-5" @click="handleClick('成都')">成都</el-menu-item>
+                            <el-menu-item index="2-6" @click="handleClick('武汉')">武汉</el-menu-item>
+                            <el-menu-item index="2-7" @click="handleClick('厦门')">厦门</el-menu-item>
+                            <el-menu-item index="2-8" @click="handleClick('邯郸')">邯郸</el-menu-item>
                         </el-menu-item-group>
                         <el-menu-item-group>
-                            <template slot="title">海外</template>
+                            <!--<template slot="title">海外</template>
                             <el-menu-item index="2-20" @click="handleClick('Taibei')">Taibei</el-menu-item>
                             <el-menu-item index="2-21" @click="handleClick('Los Angeles')">Los Angeles</el-menu-item>
-                            <el-menu-item index="2-22" @click="handleClick('San Francisco')">San Francisco</el-menu-item>
+                            <el-menu-item index="2-22" @click="handleClick('San Francisco')">San Francisco</el-menu-item>-->
                         </el-menu-item-group>
                     </el-submenu>
                     <el-submenu index="3">
@@ -39,9 +42,9 @@
                         <span>活动日期</span>
                         </template>
                         <el-menu-item-group>
-                            <el-menu-item index="3-1" @click="handleClick('7月')">七月</el-menu-item>
-                            <el-menu-item index="3-2" @click="handleClick('8月')">八月</el-menu-item>
-                            <el-menu-item index="3-3" @click="handleClick('9月')">九月</el-menu-item>
+                            <el-menu-item index="3-1" @click="handleClick('7月')">八月</el-menu-item>
+                            <el-menu-item index="3-2" @click="handleClick('8月')" disabled="">九月</el-menu-item>
+                            <el-menu-item index="3-3" @click="handleClick('9月')" disabled="">十月</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
                     <el-submenu index="4">
@@ -51,9 +54,11 @@
                         </template>
                         <el-menu-item-group>
                             <el-menu-item index="4-1" @click="handleClick('Daniel')">Daniel</el-menu-item>
-                            <el-menu-item index="4-2" @click="handleClick('Jan')">Jan</el-menu-item>
+                            <!--<el-menu-item index="4-2" @click="handleClick('Jan')">Jan</el-menu-item>
                             <el-menu-item index="4-3" @click="handleClick('Kevin')">Kevin</el-menu-item>
-                            <el-menu-item index="4-3" @click="handleClick('Terry')">Terry</el-menu-item>
+                            <el-menu-item index="4-4" @click="handleClick('Terry')">Terry</el-menu-item>-->
+                            <el-menu-item index="4-5" @click="handleClick('Ryan')">Ryan</el-menu-item>
+                            <el-menu-item index="4-6" @click="handleClick('DC')">DC</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
                     <el-submenu index="5">
@@ -63,16 +68,16 @@
                         </template>
                         <el-menu-item-group>
                             <template slot="title">线下活动</template>
-                            <el-menu-item index="4-1">路演</el-menu-item>
+                            <el-menu-item index="4-1" disabled="">路演</el-menu-item>
                             <el-menu-item index="4-2">沙龙</el-menu-item>
-                            <el-menu-item index="4-3">CW</el-menu-item>
-                            <el-menu-item index="4-3">会议</el-menu-item>
+                            <el-menu-item index="4-3" disabled="">CW</el-menu-item>
+                            <el-menu-item index="4-3" disabled="">会议</el-menu-item>
                         </el-menu-item-group>
                         <el-menu-item-group>
                             <template slot="title">线上活动</template>
-                            <el-menu-item index="4-1">线上分享</el-menu-item>
-                            <el-menu-item index="4-2">线上会议</el-menu-item>
-                            <el-menu-item index="4-3">在线直播</el-menu-item>
+                            <el-menu-item index="4-1" disabled="">线上分享</el-menu-item>
+                            <el-menu-item index="4-2" disabled="">线上会议</el-menu-item>
+                            <el-menu-item index="4-3" disabled="">在线直播</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
                 </el-menu>
@@ -96,7 +101,7 @@
 
                 <el-card class="box-card" v-for="(item, index) in showList" :key="index">
                   <div slot="header" class="clearfix">
-                    <span><h2>{{item.date}} &emsp; Shanghai &emsp; Chainge 区块链技术沙龙</h2></span>
+                    <span><h2>{{item.date}} &emsp; {{item.location}} &emsp; {{item.name}}</h2></span>
                     <el-tag size="mini" :type="randType(index)" class="ct-tag"  v-for="(tag, index) in item.tags" :key="index">{{tag}}</el-tag>
                     </div>
                   <div>
@@ -132,81 +137,69 @@ export default {
           inputValue: '',
           list: [
             {
-              tags: ["本周", "上海","6月","Daniel","沙龙","Nervos"],
-              date: "2019.06.30",
+              tags: ["厦门","8月","Ryan","沙龙","Nervos"],
+              date: "2019.08.13",
+              location: "厦门",
+              name: "\“星火集结号\” 2019全国行",
+              guest: "ryan",
+              time: "2019.8.13 13:30-17:00&emsp;[ Ryan's Show Time: <b>14:30-15:00</b> ]",
+              address: "厦门市软件园二期望海路57号楼之二8楼Lisk Elite Center",
+              bmap_link: "https://j.map.baidu.com/21/Y2d",
+              amap_link: "https://surl.amap.com/7HJL6L1f7E8",
+              join_link: "http://www.huodongxing.com/event/6501924739200",
+              sponsor: "星火矿池、Nervos、imKey"
+            },
+            {
+              tags: ["深圳","8月","Daniel","沙龙","Nervos"],
+              date: "2019.08.17",
+              location: "深圳",
+              name: "\“星火集结号\” 2019全国行",
               guest: "daniel",
-              time: "2019.6.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
-              address: "上海市虹口区余杭路18号（原境界美术馆）",
-              bmap_link: "https://j.map.baidu.com/7kOs-",
-              amap_link: "http://surl.amap.com/1PKz4_0137FPb",
-              join_link: "https://m.chainnode.com/event/342860",
-              sponsor: "链节点、Chainge"
+              time: "2019.8.17 13:30-17:00&emsp;[ Daniel's Show Time: <b>14:30-15:00</b> ]",
+              address: "南山区软件产业基地 创展谷",
+              bmap_link: "https://j.map.baidu.com/0f/oZd",
+              amap_link: "https://surl.amap.com/7HAZp5H1Qy",
+              join_link: "http://www.huodongxing.com/event/2501938032600",
+              sponsor: "星火矿池、Nervos、imKey"
             },
             {
-              tags: ["本周", "北京","7月","Terry","路演","Nervos"],
-              date: "2019.7.30",
-              guest: "terry",
-              time: "2019.7.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
-              address: "上海市虹口区余杭路18号（原境界美术馆）",
-              bmap_link: "https://j.map.baidu.com/7kOs-",
+              tags: ["武汉","8月","DC","沙龙","Nervos"],
+              date: "2019.08.20",
+              location: "武汉",
+              name: "\“星火集结号\” 2019全国行",
+              guest: "dc",
+              time: "2019.8.20 13:30-17:00&emsp;[ DC's Show Time: <b>14:30-15:00</b> ]",
+              address: "江汉区常青路43号居然之家汉口店5楼顶层设计中心",
+              bmap_link: "https://j.map.baidu.com/9f/XNd",
               amap_link: "http://surl.amap.com/1PKz4_0137FPb",
-              join_link: "https://m.chainnode.com/event/342860",
-              sponsor: "链节点、Chainge"
+              join_link: "https://surl.amap.com/7HuwMnq3wj",
+              sponsor: "星火矿池、Nervos、imKey"
             },
             {
-              tags: ["本周", "杭州","8月","Jan","CW","Nervos"],
-              date: "2019.8.30",
-              guest: "jan",
-              time: "2019.8.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
-              address: "上海市虹口区余杭路18号（原境界美术馆）",
-              bmap_link: "https://j.map.baidu.com/7kOs-",
-              amap_link: "http://surl.amap.com/1PKz4_0137FPb",
-              join_link: "https://m.chainnode.com/event/342860",
-              sponsor: "链节点、Chainge"
-            },
-            {
-              tags: ["本周", "深圳","9月","Nervos","会议"],
-              date: "2019.9.30",
-              guest: "nervos",
-              time: "2019.9.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
-              address: "上海市虹口区余杭路18号（原境界美术馆）",
-              bmap_link: "https://j.map.baidu.com/7kOs-",
-              amap_link: "http://surl.amap.com/1PKz4_0137FPb",
-              join_link: "https://m.chainnode.com/event/342860",
-              sponsor: "链节点、Chainge"
-            },
-            {
-              tags: ["本周","1月","Jan","线上直播","Nervos"],
-              date: "2019.1.30",
-              guest: "jan",
-              time: "2019.1.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
-              address: "上海市虹口区余杭路18号（原境界美术馆）",
-              bmap_link: "https://j.map.baidu.com/7kOs-",
-              amap_link: "http://surl.amap.com/1PKz4_0137FPb",
-              join_link: "https://m.chainnode.com/event/342860",
-              sponsor: "链节点、Chainge"
-            },
-            {
-              tags: ["本周","3月","Terry","线上会议","Nervos"],
-              date: "2019.3.30",
-              guest: "terry",
-              time: "2019.3.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
-              address: "上海市虹口区余杭路18号（原境界美术馆）",
-              bmap_link: "https://j.map.baidu.com/7kOs-",
-              amap_link: "http://surl.amap.com/1PKz4_0137FPb",
-              join_link: "https://m.chainnode.com/event/342860",
-              sponsor: "链节点、Chainge"
-            },
-            {
-              tags: ["本周","1月","Daniel","线上分享","Nervos"],
-              date: "2019.4.30",
+              tags: ["成都","8月","Daniel","沙龙","Nervos"],
+              date: "2019.08.24",
+              location: "成都",
+              name: "\“星火集结号\” 2019全国行",
               guest: "daniel",
-              time: "2019.4.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
-              address: "上海市虹口区余杭路18号（原境界美术馆）",
-              bmap_link: "https://j.map.baidu.com/7kOs-",
-              amap_link: "http://surl.amap.com/1PKz4_0137FPb",
-              join_link: "https://m.chainnode.com/event/342860",
-              sponsor: "链节点、Chainge"
+              time: "2019.8.24 13:30-17:00&emsp;[ Daniel's Show Time: <b>14:30-15:00</b> ]",
+              address: "锦江区航天科技大厦43楼 侠客岛",
+              bmap_link: "https://j.map.baidu.com/9b/N-d",
+              amap_link: "https://surl.amap.com/7Hl83l6lP",
+              join_link: "http://www.huodongxing.com/event/4501939149600",
+              sponsor: "星火矿池、Nervos、imKey"
+            },
+             {
+              tags: ["邯郸","8月","DC","沙龙","Nervos"],
+              date: "2019.08.27",
+              location: "邯郸",
+              name: "\“星火集结号\” 2019全国行",
+              guest: "dc",
+              time: "2019.8.27 13:30-17:00&emsp;[ DC's Show Time: <b>14:30-15:00</b> ]",
+              address: "待定",
+              bmap_link: "https://j.map.baidu.com/fe/RPd",
+              amap_link: "https://surl.amap.com/7Hhe7l1xb71",
+              join_link: "http://www.huodongxing.com/event/9501939558300",
+              sponsor: "星火矿池、Nervos、imKey"
             },
           ],
           showList: []
@@ -369,6 +362,26 @@ export default {
 
 .yaning{
     background: url(images/yaning.jpeg);
+    background-size: 80px;
+    height: 80px;
+    width: 80px;
+    border-radius:50%;
+    text-align: center;
+    display: inline-block;
+}
+
+.ryan{
+    background: url(images/ryan.jpg);
+    background-size: 80px;
+    height: 80px;
+    width: 80px;
+    border-radius:50%;
+    text-align: center;
+    display: inline-block;
+}
+
+.dc{
+    background: url(images/dc.jpg);
     background-size: 80px;
     height: 80px;
     width: 80px;
