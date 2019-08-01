@@ -42,9 +42,9 @@
                         <span>活动日期</span>
                         </template>
                         <el-menu-item-group>
-                            <el-menu-item index="3-1" @click="handleClick('7月')">八月</el-menu-item>
-                            <el-menu-item index="3-2" @click="handleClick('8月')" disabled="">九月</el-menu-item>
-                            <el-menu-item index="3-3" @click="handleClick('9月')" disabled="">十月</el-menu-item>
+                            <el-menu-item index="3-1" @click="handleClick('八月')">八月</el-menu-item>
+                            <el-menu-item index="3-2" @click="handleClick('九月')" disabled="">九月</el-menu-item>
+                            <el-menu-item index="3-3" @click="handleClick('十月')" disabled="">十月</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
                     <el-submenu index="4">
@@ -137,7 +137,7 @@ export default {
           inputValue: '',
           list: [
             {
-              tags: ["厦门","8月","Ryan","沙龙","Nervos"],
+              tags: ["厦门","八月","Ryan","沙龙","Nervos"],
               date: "2019.08.13",
               location: "厦门",
               name: "\“星火集结号\” 2019全国行",
@@ -150,7 +150,7 @@ export default {
               sponsor: "星火矿池、Nervos、imKey"
             },
             {
-              tags: ["深圳","8月","Daniel","沙龙","Nervos"],
+              tags: ["深圳","八月","Daniel","沙龙","Nervos"],
               date: "2019.08.17",
               location: "深圳",
               name: "\“星火集结号\” 2019全国行",
@@ -163,7 +163,7 @@ export default {
               sponsor: "星火矿池、Nervos、imKey"
             },
             {
-              tags: ["武汉","8月","DC","沙龙","Nervos"],
+              tags: ["武汉","八月","DC","沙龙","Nervos"],
               date: "2019.08.20",
               location: "武汉",
               name: "\“星火集结号\” 2019全国行",
@@ -176,7 +176,7 @@ export default {
               sponsor: "星火矿池、Nervos、imKey"
             },
             {
-              tags: ["成都","8月","Daniel","沙龙","Nervos"],
+              tags: ["成都","八月","Daniel","沙龙","Nervos"],
               date: "2019.08.24",
               location: "成都",
               name: "\“星火集结号\” 2019全国行",
@@ -189,7 +189,7 @@ export default {
               sponsor: "星火矿池、Nervos、imKey"
             },
              {
-              tags: ["邯郸","8月","DC","沙龙","Nervos"],
+              tags: ["邯郸","八月","DC","沙龙","Nervos"],
               date: "2019.08.27",
               location: "邯郸",
               name: "\“星火集结号\” 2019全国行",
