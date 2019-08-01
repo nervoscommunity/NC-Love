@@ -4,10 +4,14 @@
             <div style="text-align: center">
             <el-col :span="4">
                 <h3>&emsp; 活动信息</h3>
-                <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+                <el-menu default-active="0" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+                    <el-menu-item index="0">
+                            <i class="el-icon-time"></i>
+                            <span slot="title" @click="handleClick('Nervos')">所有活动</span>
+                    </el-menu-item>
                     <el-menu-item index="1">
                             <i class="el-icon-time"></i>
-                            <span slot="title" @click="handleClick('最新')">最新活动</span>
+                            <span slot="title" @click="handleClick('本周')">近期活动</span>
                     </el-menu-item>
                     <el-submenu index="2">
                         <template slot="title">
@@ -17,7 +21,7 @@
                         <el-menu-item-group>
                             <template slot="title">国内</template>
                             <el-menu-item index="2-1" @click="handleClick('北京')">北京</el-menu-item>
-                            <el-menu-item index="2-2" @click="handleClick('上海')" >上海</el-menu-item>
+                            <el-menu-item index="2-2" @click="handleClick('上海')">上海</el-menu-item>
                             <el-menu-item index="2-3" @click="handleClick('杭州')">杭州</el-menu-item>
                             <el-menu-item index="2-4" @click="handleClick('深圳')">深圳</el-menu-item>
                             <el-menu-item index="2-5" @click="handleClick('成都')">成都</el-menu-item>
@@ -35,9 +39,9 @@
                         <span>活动日期</span>
                         </template>
                         <el-menu-item-group>
-                            <el-menu-item index="3-1" @click="handleClick('七月')">七月</el-menu-item>
-                            <el-menu-item index="3-2" @click="handleClick('八月')">八月</el-menu-item>
-                            <el-menu-item index="3-3" @click="handleClick('九月')">九月</el-menu-item>
+                            <el-menu-item index="3-1" @click="handleClick('7月')">七月</el-menu-item>
+                            <el-menu-item index="3-2" @click="handleClick('8月')">八月</el-menu-item>
+                            <el-menu-item index="3-3" @click="handleClick('9月')">九月</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
                     <el-submenu index="4">
@@ -120,14 +124,15 @@
 <script>
 
 export default {
+    //默认的数据，打开页面时候加载
     data() {
         return {
-          dynamicTags: ['最新'],
+          dynamicTags: ['Nervos'],
           inputVisible: false,
           inputValue: '',
           list: [
             {
-              tags: ["最新", "上海","6月","Daniel","沙龙"],
+              tags: ["本周", "上海","6月","Daniel","沙龙","Nervos"],
               date: "2019.06.30",
               guest: "daniel",
               time: "2019.6.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
@@ -138,7 +143,7 @@ export default {
               sponsor: "链节点、Chainge"
             },
             {
-              tags: ["最新", "北京","7月","Terry","路演"],
+              tags: ["本周", "北京","7月","Terry","路演","Nervos"],
               date: "2019.7.30",
               guest: "terry",
               time: "2019.7.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
@@ -149,7 +154,7 @@ export default {
               sponsor: "链节点、Chainge"
             },
             {
-              tags: ["最新", "杭州","8月","Jan","CW"],
+              tags: ["本周", "杭州","8月","Jan","CW","Nervos"],
               date: "2019.8.30",
               guest: "jan",
               time: "2019.8.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
@@ -160,7 +165,7 @@ export default {
               sponsor: "链节点、Chainge"
             },
             {
-              tags: ["最新", "深圳","9月","Nervos","会议"],
+              tags: ["本周", "深圳","9月","Nervos","会议"],
               date: "2019.9.30",
               guest: "nervos",
               time: "2019.9.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
@@ -171,7 +176,7 @@ export default {
               sponsor: "链节点、Chainge"
             },
             {
-              tags: ["最新","1月","Jan","线上直播"],
+              tags: ["本周","1月","Jan","线上直播","Nervos"],
               date: "2019.1.30",
               guest: "jan",
               time: "2019.1.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
@@ -182,7 +187,7 @@ export default {
               sponsor: "链节点、Chainge"
             },
             {
-              tags: ["最新","3月","Terry","线上会议"],
+              tags: ["本周","3月","Terry","线上会议","Nervos"],
               date: "2019.3.30",
               guest: "terry",
               time: "2019.3.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
@@ -193,7 +198,7 @@ export default {
               sponsor: "链节点、Chainge"
             },
             {
-              tags: ["最新","1月","Daniel","线上分享"],
+              tags: ["本周","1月","Daniel","线上分享","Nervos"],
               date: "2019.4.30",
               guest: "daniel",
               time: "2019.4.30 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:40-14:00</b> ]",
@@ -207,6 +212,7 @@ export default {
           showList: []
       };
     },
+    // 检测更新
     watch: {
       dynamicTags(newTags) {
         console.log(newTags)
@@ -221,6 +227,7 @@ export default {
         this.showList = this.showList.sort((a, b) => new Date(b.date) -new Date(a.date))
       }
     },
+    // 打开页面自动激活的方法
     mounted() {
       this.showList = this.list.filter((item) => {
         for(let i = 0; i < this.dynamicTags.length; i++) {
@@ -233,6 +240,7 @@ export default {
       this.showList = this.showList.sort((a, b) => new Date(b.date) -new Date(a.date))
       console.log(this.showList)
     },
+    //自定义的方法，点击时候调用
     methods: {
       randType() {
         var tps = ["primary","success", "danger", "warning","info"]
