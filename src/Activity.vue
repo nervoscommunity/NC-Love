@@ -68,16 +68,14 @@
                         </template>
                         <el-menu-item-group>
                             <template slot="title">线下活动</template>
-                            <el-menu-item index="4-1">路演</el-menu-item>
-                            <el-menu-item index="4-2">沙龙</el-menu-item>
-                            <el-menu-item index="4-3" disabled="">CW</el-menu-item>
-                            <el-menu-item index="4-3" disabled="">会议</el-menu-item>
+                            <el-menu-item index="5-1" @click="handleClick('路演')">路演</el-menu-item>
+                            <el-menu-item index="5-2" @click="handleClick('沙龙')">沙龙</el-menu-item>
+                            <el-menu-item index="5-3"  @click="handleClick('CW')" disabled="">CW</el-menu-item>
+                            <el-menu-item index="5-3"  @click="handleClick('会议')" disabled="">会议</el-menu-item>
                         </el-menu-item-group>
                         <el-menu-item-group>
                             <template slot="title">线上活动</template>
-                            <el-menu-item index="4-1" disabled="">线上分享</el-menu-item>
-                            <el-menu-item index="4-2" disabled="">线上会议</el-menu-item>
-                            <el-menu-item index="4-3" disabled="">在线直播</el-menu-item>
+                            <el-menu-item index="5-10"  @click="handleClick('线上分享')" disabled="">线上</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
                 </el-menu>
