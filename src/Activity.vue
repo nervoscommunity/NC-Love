@@ -28,12 +28,11 @@
                             <el-menu-item index="2-6" @click="handleClick('武汉')">武汉</el-menu-item>
                             <el-menu-item index="2-7" @click="handleClick('厦门')">厦门</el-menu-item>
                             <el-menu-item index="2-8" @click="handleClick('邯郸')">邯郸</el-menu-item>
+                            <el-menu-item index="2-9" @click="handleClick('台北')">台北</el-menu-item>
                         </el-menu-item-group>
                         <el-menu-item-group>
-                            <!--<template slot="title">海外</template>
-                            <el-menu-item index="2-20" @click="handleClick('Taibei')">Taibei</el-menu-item>
-                            <el-menu-item index="2-21" @click="handleClick('Los Angeles')">Los Angeles</el-menu-item>
-                            <el-menu-item index="2-22" @click="handleClick('San Francisco')">San Francisco</el-menu-item>-->
+                            <template slot="title">海外</template>
+                            <el-menu-item index="2-21" @click="handleClick('Berlin')">Berlin</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
                     <el-submenu index="3">
@@ -59,6 +58,7 @@
                             <el-menu-item index="4-4" @click="handleClick('Terry')">Terry</el-menu-item>-->
                             <el-menu-item index="4-5" @click="handleClick('Ryan')">Ryan</el-menu-item>
                             <el-menu-item index="4-6" @click="handleClick('DC')">DC</el-menu-item>
+                            <el-menu-item index="4-7" @click="handleClick('Xuejie')">Xuejie</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
                     <el-submenu index="5">
@@ -68,7 +68,7 @@
                         </template>
                         <el-menu-item-group>
                             <template slot="title">线下活动</template>
-                            <el-menu-item index="4-1" disabled="">路演</el-menu-item>
+                            <el-menu-item index="4-1">路演</el-menu-item>
                             <el-menu-item index="4-2">沙龙</el-menu-item>
                             <el-menu-item index="4-3" disabled="">CW</el-menu-item>
                             <el-menu-item index="4-3" disabled="">会议</el-menu-item>
@@ -166,7 +166,7 @@ export default {
               tags: ["台北","八月","Nervos","路演","Nervos"],
               date: "2019.08.17",
               location: "台北",
-              name: "Beyond Consensus——Nervos Meetup",
+              name: "Beyond Consensus —— Nervos Meetup",
               guest: "nervos",
               time: "2019.8.17 14:00-17:00",
               address: "MaiCoin HQ - 现代财富科技总部加密货币实体店",
@@ -174,6 +174,19 @@ export default {
               amap_link: "",
               join_link: "https://www.huodongxing.com/event/5500646013200",
               sponsor: "Nervos"
+            },
+            {
+              tags: ["Berlin","八月","Xuejie","沙龙","Nervos"],
+              date: "2019.08.19",
+              location: "Belin",
+              name: "In Rust We Trust —— Berlin Meetup",
+              guest: "xuejie",
+              time: "2019.8.19 19:00-21:00",
+              address: "Glogauer Str. 6 · Berlin",
+              bmap_link: "https://j.map.baidu.com/ce/OGd",
+              amap_link: "",
+              join_link: "https://www.meetup.com/Rust-in-Blockchain-Berlin/events/263431591",
+              sponsor: "Fluence、Nervos"
             },
             {
               tags: ["武汉","八月","DC","沙龙","Nervos"],
@@ -402,7 +415,15 @@ export default {
     text-align: center;
     display: inline-block;
 }
-
+.xuejie{
+    background: url(images/xuejie.jpg);
+    background-size: 80px;
+    height: 80px;
+    width: 80px;
+    border-radius:50%;
+    text-align: center;
+    display: inline-block;
+}
 .filter-tag .el-tag {
   margin-right: 8px;
   margin-bottom: 8px;
