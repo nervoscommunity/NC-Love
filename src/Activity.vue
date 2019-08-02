@@ -415,8 +415,9 @@ export default {
     text-align: center;
     display: inline-block;
 }
+
 .xuejie{
-    background: url(images/xuejie.jpg);
+    background: url(images/xuejie.png);
     background-size: 80px;
     height: 80px;
     width: 80px;
@@ -424,6 +425,7 @@ export default {
     text-align: center;
     display: inline-block;
 }
+
 .filter-tag .el-tag {
   margin-right: 8px;
   margin-bottom: 8px;
