@@ -163,6 +163,19 @@ export default {
               sponsor: "星火矿池、Nervos、imKey"
             },
             {
+              tags: ["台北","八月","Nervos","路演","Nervos"],
+              date: "2019.08.17",
+              location: "台北",
+              name: "Beyond Consensus——Nervos Meetup",
+              guest: "nervos",
+              time: "2019.8.17 14:00-17:00",
+              address: "MaiCoin HQ - 现代财富科技总部加密货币实体店",
+              bmap_link: "",
+              amap_link: "",
+              join_link: "https://www.huodongxing.com/event/5500646013200",
+              sponsor: "Nervos"
+            },
+            {
               tags: ["武汉","八月","DC","沙龙","Nervos"],
               date: "2019.08.20",
               location: "武汉",
