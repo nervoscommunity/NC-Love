@@ -176,7 +176,7 @@ export default {
             {
               tags: ["Berlin","八月","Xuejie","沙龙","Nervos"],
               date: "2019.08.19",
-              location: "Belin",
+              location: "Berlin",
               name: "In Rust We Trust —— Berlin Meetup",
               guest: "xuejie",
               time: "2019.8.19 19:00-21:00",
