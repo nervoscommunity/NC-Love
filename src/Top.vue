@@ -13,7 +13,7 @@
                     </el-submenu>-->
                     <el-menu-item disabled index="3">快讯</el-menu-item>
                     <el-menu-item disabled index="4">投票</el-menu-item>
-                    <el-menu-item index="5">关于</el-menu-item>
+                    <el-menu-item disabled index="5">关于</el-menu-item>
                 </el-menu>
               </div>
           </el-col>
