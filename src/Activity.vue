@@ -9,10 +9,10 @@
                             <i class="el-icon-time"></i>
                             <span slot="title" @click="handleClick('Nervos')">所有活动</span>
                     </el-menu-item>
-                    <!--<el-menu-item index="1">
+                    <el-menu-item index="1">
                             <i class="el-icon-time"></i>
                             <span slot="title" @click="handleClick('本周')">近期活动</span>
-                    </el-menu-item>-->
+                    </el-menu-item>
                     <el-submenu index="2">
                         <template slot="title">
                         <i class="el-icon-location"></i>
