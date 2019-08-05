@@ -145,7 +145,7 @@ export default {
               address: "杭州市西湖区文一西路 83 号浙江财经大学文华校区学博楼7F",
               bmap_link: "https://j.map.baidu.com/58/v6f",
               amap_link: "https://surl.amap.com/3bzCIL1o4Ze",
-              join_link: "http://www.huodongxing.com/event/6501924739200",
+              join_link: "https://m.chainnode.com/event/360663",
               sponsor: "巴比特加速器、Dimension、Nervos、创立方"
             },
             {
