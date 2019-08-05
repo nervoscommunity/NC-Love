@@ -21,8 +21,8 @@
                         <el-menu-item-group>
                             <template slot="title">国内</template>
                             <!--<el-menu-item index="2-1" @click="handleClick('北京')">北京</el-menu-item>
-                            <el-menu-item index="2-2" @click="handleClick('上海')">上海</el-menu-item>
-                            <el-menu-item index="2-3" @click="handleClick('杭州')">杭州</el-menu-item>-->
+                            <el-menu-item index="2-2" @click="handleClick('上海')">上海</el-menu-item>-->
+                            <el-menu-item index="2-3" @click="handleClick('杭州')">杭州</el-menu-item>
                             <el-menu-item index="2-4" @click="handleClick('深圳')">深圳</el-menu-item>
                             <el-menu-item index="2-5" @click="handleClick('成都')">成都</el-menu-item>
                             <el-menu-item index="2-6" @click="handleClick('武汉')">武汉</el-menu-item>
@@ -59,6 +59,7 @@
                             <el-menu-item index="4-5" @click="handleClick('Ryan')">Ryan</el-menu-item>
                             <el-menu-item index="4-6" @click="handleClick('DC')">DC</el-menu-item>
                             <el-menu-item index="4-7" @click="handleClick('Xuejie')">Xuejie</el-menu-item>
+                            <el-menu-item index="4-8" @click="handleClick('William')">William</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
                     <el-submenu index="5">
@@ -134,6 +135,19 @@ export default {
           inputVisible: false,
           inputValue: '',
           list: [
+            {
+              tags: ["杭州","八月","William","沙龙","Nervos"],
+              date: "2019.08.8",
+              location: "杭州",
+              name: "做区块链落地——你必须懂得密码隐私",
+              guest: "nervos",
+              time: "2019.8.8 18:30-21:30&emsp;[ William's Show Time: <b>19:55-20:15</b> ]",
+              address: "杭州市西湖区文一西路 83 号浙江财经大学文华校区学博楼7F",
+              bmap_link: "https://j.map.baidu.com/58/v6f",
+              amap_link: "https://surl.amap.com/3bzCIL1o4Ze",
+              join_link: "http://www.huodongxing.com/event/6501924739200",
+              sponsor: "巴比特加速器、Dimension、Nervos、创立方"
+            },
             {
               tags: ["厦门","八月","Ryan","沙龙","Nervos"],
               date: "2019.08.13",
