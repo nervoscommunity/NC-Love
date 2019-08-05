@@ -136,7 +136,7 @@ export default {
           inputValue: '',
           list: [
             {
-              tags: ["杭州","八月","William","沙龙","Nervos"],
+              tags: ["杭州","八月","William","沙龙","Nervos","本周"],
               date: "2019.08.8",
               location: "杭州",
               name: "做区块链落地——你必须懂得密码隐私",
