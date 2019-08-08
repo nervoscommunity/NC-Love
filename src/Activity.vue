@@ -236,8 +236,8 @@ export default {
               time: "2019.8.20 13:30-17:00&emsp;[ DC's Show Time: <b>14:30-15:00</b> ]",
               address: "江汉区常青路43号居然之家汉口店5楼顶层设计中心",
               bmap_link: "https://j.map.baidu.com/9f/XNd",
-              amap_link: "http://surl.amap.com/1PKz4_0137FPb",
-              join_link: "https://surl.amap.com/7HuwMnq3wj",
+              amap_link: "https://surl.amap.com/7HuwMnq3wj",
+              join_link: "http://www.huodongxing.com/event/1501938702800",
               sponsor: "星火矿池、Nervos、imKey"
             },
             {
