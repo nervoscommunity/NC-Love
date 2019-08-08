@@ -138,7 +138,7 @@ export default {
           list: [
             {
               tags: ["杭州","八月","Williams","沙龙","Nervos","本周"],
-              date: "2019.08.8",
+              date: "2019.08.08",
               location: "杭州",
               name: "做区块链落地——你必须懂得密码隐私",
               guest: "williams",
@@ -467,6 +467,16 @@ export default {
 
 .williams{
     background: url(images/williams.jpg);
+    background-size: 80px;
+    height: 80px;
+    width: 80px;
+    border-radius:50%;
+    text-align: center;
+    display: inline-block;
+}
+
+.haichao{
+    background: url(images/haichao.jpeg);
     background-size: 80px;
     height: 80px;
     width: 80px;
