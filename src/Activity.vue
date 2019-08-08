@@ -20,8 +20,8 @@
                         </template>
                         <el-menu-item-group>
                             <template slot="title">国内</template>
-                            <!--<el-menu-item index="2-1" @click="handleClick('北京')">北京</el-menu-item>
-                            <el-menu-item index="2-2" @click="handleClick('上海')">上海</el-menu-item>-->
+                            <el-menu-item index="2-1" @click="handleClick('北京')">北京</el-menu-item>
+                            <!--<el-menu-item index="2-2" @click="handleClick('上海')">上海</el-menu-item>-->
                             <el-menu-item index="2-3" @click="handleClick('杭州')">杭州</el-menu-item>
                             <el-menu-item index="2-4" @click="handleClick('深圳')">深圳</el-menu-item>
                             <el-menu-item index="2-5" @click="handleClick('成都')">成都</el-menu-item>
@@ -42,8 +42,8 @@
                         </template>
                         <el-menu-item-group>
                             <el-menu-item index="3-1" @click="handleClick('八月')">八月</el-menu-item>
-                            <el-menu-item index="3-2" @click="handleClick('九月')" disabled="">九月</el-menu-item>
-                            <el-menu-item index="3-3" @click="handleClick('十月')" disabled="">十月</el-menu-item>
+                            <!--<el-menu-item index="3-2" @click="handleClick('九月')" disabled="">九月</el-menu-item>
+                            <el-menu-item index="3-3" @click="handleClick('十月')" disabled="">十月</el-menu-item>-->
                         </el-menu-item-group>
                     </el-submenu>
                     <el-submenu index="4">
@@ -60,6 +60,7 @@
                             <el-menu-item index="4-6" @click="handleClick('DC')">DC</el-menu-item>
                             <el-menu-item index="4-7" @click="handleClick('Xuejie')">Xuejie</el-menu-item>
                             <el-menu-item index="4-8" @click="handleClick('Williams')">Williams</el-menu-item>
+                            <el-menu-item index="4-9" @click="handleClick('Haichao')">Haichao</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
                     <el-submenu index="5">
@@ -149,6 +150,19 @@ export default {
               sponsor: "巴比特加速器、Dimension、Nervos、创立方"
             },
             {
+              tags: ["杭州","八月","HaiChao","沙龙","Nervos","本周"],
+              date: "2019.08.11",
+              location: "杭州",
+              name: "区块链新风向 跨链：让价值自由流通",
+              guest: "haichao",
+              time: "2019.8.11 14:00-17:40&emsp;[ Haichao's Show Time: <b>16:20-17:00</b> ]",
+              address: "杭州萧山区万和国际中心7幢华媒智谷24F",
+              bmap_link: "https://j.map.baidu.com/9f/LLf",
+              amap_link: "https://surl.amap.com/4dj4or10eJE",
+              join_link: "http://www.huodongxing.com/event/6504246435700?td=2963477994013",
+              sponsor: "白话区块链"
+            },
+            {
               tags: ["厦门","八月","Ryan","沙龙","Nervos"],
               date: "2019.08.13",
               location: "厦门",
@@ -199,6 +213,19 @@ export default {
               amap_link: "",
               join_link: "https://www.meetup.com/Rust-in-Blockchain-Berlin/events/263431591",
               sponsor: "Fluence、Nervos"
+            },
+            {
+              tags: ["北京","八月","Daniel","会议","Nervos"],
+              date: "2019.08.20",
+              location: "北京",
+              name: " POW\'ER 2019 全球开发者大会",
+              guest: "daniel",
+              time: "2019.8.20 13:30-17:00&emsp;[ Daniel's Show Time: <b>13:50-14:10</b> ]",
+              address: "北京国贸大酒店",
+              bmap_link: "https://j.map.baidu.com/4b/0Nf",
+              amap_link: "https://surl.amap.com/4fs50LC4QO",
+              join_link: "https://zt.huoxing24.com/powerbj",
+              sponsor: "火星财经"
             },
             {
               tags: ["武汉","八月","DC","沙龙","Nervos"],
