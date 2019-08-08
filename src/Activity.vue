@@ -150,7 +150,7 @@ export default {
               sponsor: "巴比特加速器、Dimension、Nervos、创立方"
             },
             {
-              tags: ["杭州","八月","HaiChao","沙龙","Nervos","本周"],
+              tags: ["杭州","八月","Haichao","沙龙","Nervos","本周"],
               date: "2019.08.11",
               location: "杭州",
               name: "区块链新风向 跨链：让价值自由流通",
