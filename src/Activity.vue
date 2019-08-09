@@ -61,6 +61,7 @@
                             <el-menu-item index="4-7" @click="handleClick('Xuejie')">Xuejie</el-menu-item>
                             <el-menu-item index="4-8" @click="handleClick('Williams')">Williams</el-menu-item>
                             <el-menu-item index="4-9" @click="handleClick('Haichao')">Haichao</el-menu-item>
+                            <el-menu-item index="4-10" @click="handleClick('Ash')">Ash</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
                     <el-submenu index="5">
@@ -136,19 +137,19 @@ export default {
           inputVisible: false,
           inputValue: '',
           list: [
-            {
-              tags: ["杭州","八月","Williams","沙龙","Nervos","本周"],
-              date: "2019.08.08",
-              location: "杭州",
-              name: "做区块链落地——你必须懂得密码隐私",
-              guest: "williams",
-              time: "2019.8.8 18:30-21:30&emsp;[ William's Show Time: <b>19:55-20:15</b> ]",
-              address: "杭州市西湖区文一西路 83 号浙江财经大学文华校区学博楼7F",
-              bmap_link: "https://j.map.baidu.com/58/v6f",
-              amap_link: "https://surl.amap.com/3bzCIL1o4Ze",
-              join_link: "https://m.chainnode.com/event/360663",
-              sponsor: "巴比特加速器、Dimension、Nervos、创立方"
-            },
+//            {
+//              tags: ["杭州","八月","Williams","沙龙","Nervos","本周"],
+//             date: "2019.08.08",
+//              location: "杭州",
+//              name: "做区块链落地——你必须懂得密码隐私",
+//              guest: "williams",
+//              time: "2019.8.8 18:30-21:30&emsp;[ William's Show Time: <b>19:55-20:15</b> ]",
+//              address: "杭州市西湖区文一西路 83 号浙江财经大学文华校区学博楼7F",
+//              bmap_link: "https://j.map.baidu.com/58/v6f",
+//              amap_link: "https://surl.amap.com/3bzCIL1o4Ze",
+//              join_link: "https://m.chainnode.com/event/360663",
+//             sponsor: "巴比特加速器、Dimension、Nervos、创立方"
+//            },
             {
               tags: ["杭州","八月","Haichao","沙龙","Nervos","本周"],
               date: "2019.08.11",
@@ -189,13 +190,13 @@ export default {
               sponsor: "星火矿池、Nervos、imKey"
             },
             {
-              tags: ["台北","八月","Nervos","路演","Nervos"],
+              tags: ["台北","八月","Ash","路演","Nervos"],
               date: "2019.08.17",
               location: "台北",
               name: "Beyond Consensus —— Nervos Meetup",
-              guest: "nervos",
+              guest: "ash",
               time: "2019.8.17 18:30-21:00",
-              address: "MaiCoin HQ - 现代财富科技总部加密货币实体店",
+              address: "台北市中正区八德路一段 104 号",
               bmap_link: "",
               amap_link: "",
               join_link: "https://www.huodongxing.com/event/5500646013200",
@@ -477,6 +478,16 @@ export default {
 
 .haichao{
     background: url(images/haichao.jpeg);
+    background-size: 80px;
+    height: 80px;
+    width: 80px;
+    border-radius:50%;
+    text-align: center;
+    display: inline-block;
+}
+
+.ash{
+    background: url(images/ash.jpg);
     background-size: 80px;
     height: 80px;
     width: 80px;
