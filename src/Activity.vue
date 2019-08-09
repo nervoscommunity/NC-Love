@@ -194,7 +194,7 @@ export default {
               location: "台北",
               name: "Beyond Consensus —— Nervos Meetup",
               guest: "nervos",
-              time: "2019.8.17 14:00-17:00",
+              time: "2019.8.17 18:30-21:00",
               address: "MaiCoin HQ - 现代财富科技总部加密货币实体店",
               bmap_link: "",
               amap_link: "",
