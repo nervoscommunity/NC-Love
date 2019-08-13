@@ -150,19 +150,19 @@ export default {
 //              join_link: "https://m.chainnode.com/event/360663",
 //             sponsor: "巴比特加速器、Dimension、Nervos、创立方"
 //            },
-            {
-              tags: ["杭州","八月","Haichao","沙龙","Nervos","本周"],
-              date: "2019.08.11",
-              location: "杭州",
-              name: "区块链新风向 跨链：让价值自由流通",
-              guest: "haichao",
-              time: "2019.8.11 14:00-17:40&emsp;[ Haichao's Show Time: <b>16:20-17:00</b> ]",
-              address: "杭州萧山区万和国际中心7幢华媒智谷24F",
-              bmap_link: "https://j.map.baidu.com/9f/LLf",
-              amap_link: "https://surl.amap.com/4dj4or10eJE",
-              join_link: "http://www.huodongxing.com/event/6504246435700?td=2963477994013",
-              sponsor: "白话区块链"
-            },
+//            {
+//              tags: ["杭州","八月","Haichao","沙龙","Nervos","本周"],
+//              date: "2019.08.11",
+//              location: "杭州",
+//              name: "区块链新风向 跨链：让价值自由流通",
+//              guest: "haichao",
+//              time: "2019.8.11 14:00-17:40&emsp;[ Haichao's Show Time: <b>16:20-17:00</b> ]",
+//              address: "杭州萧山区万和国际中心7幢华媒智谷24F",
+//              bmap_link: "https://j.map.baidu.com/9f/LLf",
+//              amap_link: "https://surl.amap.com/4dj4or10eJE",
+//              join_link: "http://www.huodongxing.com/event/6504246435700?td=2963477994013",
+//              sponsor: "白话区块链"
+//            },
             {
               tags: ["厦门","八月","Ryan","沙龙","Nervos"],
               date: "2019.08.13",
